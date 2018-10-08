@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <p th:text="${produto.nome}"></p>
+            <p th:text="${produto.disponivel}"></p>
+            <ul th:if="${produto.categorias != null}" 
+                th:each="categoria : ${produto.categorias}">
+                <li th:text="${categoria}"></li>
+            </ul>
+        </div>
+    </body>
+</html>

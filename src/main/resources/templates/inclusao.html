@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Produtos - Inclusão</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Produtos - Inclusão</h4>
+                    <form th:action="@{salvar}" method="post" th:object="${produto}">
+                        <div class="form-group">
+                            <label for="inputNome">Nome</label>
+                            <input type="text" class="form-control" th:field="*{nome}" id="inputNome" placeholder="Nome do Produto"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescricao">Descrição</label>
+                            <input type="text" class="form-control" th:field="*{descricao}" id="inputDescricao" placeholder="Descrição do Produto"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPrecoCompra">Preço Compra</label>
+                            <input type="number" class="form-control" th:field="*{precoCompra}" id="inputPrecoCompra" placeholder="Preço Compra do Produto"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPrecoVenda">Preço Venda</label>
+                            <input type="number" class="form-control" th:field="*{precoVenda}" id="inputPrecoVenda" placeholder="Preço Venda do Produto"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputQuantidade">Quantidade</label>
+                            <input type="number" class="form-control" th:field="*{quantidade}" id="inputQuantidade" placeholder="Quantidade do Produto"/>
+                        </div>
+                        <fieldset>
+                            <legend>Disponibilidade</legend>
+                            <input type="radio" value="1" th:field="*{disponivel}" />
+                            <label>Disponível</label>
+                            <input type="radio" value="0" th:field="*{disponivel}" />
+                            <label>Indisponível</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Categorias</legend>
+                            <input type="checkbox" value="A" th:field="*{categorias}" />
+                            <label>Categoria A</label>
+                            <input type="checkbox" value="B" th:field="*{categorias}" />
+                            <label>Categoria B</label>
+                            <input type="checkbox" value="C" th:field="*{categorias}" />
+                            <label>Categoria C</label>
+                        </fieldset>
+                        <button class="btn btn-success" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
